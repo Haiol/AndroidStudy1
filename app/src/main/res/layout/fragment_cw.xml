@@ -15,14 +15,22 @@
         android:orientation="vertical"
         android:layout_weight="80">
         <TextView
+            android:id="@+id/title"
+            android:textSize="60sp"
+            android:layout_marginBottom="60sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="요일"/>
         <TextView
+            android:id="@+id/weather"
+            android:textSize="60sp"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="날씨"/>
         <TextView
+            android:id="@+id/temp"
+            android:textSize="60sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="온도"/>
@@ -31,9 +39,173 @@
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/bottom"
+        android:orientation="horizontal"
+        android:weightSum="7"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="20">
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/title7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="요일"/>
+            <TextView
+                android:id="@+id/weather7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="날씨"/>
+            <TextView
+                android:id="@+id/temp7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도"/>
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -24,11 +24,18 @@ public class ViewAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return new cwFragment().newInstance(today);
+        if(position==0)
+            return new cwFragment().newInstance(today,"오늘");
+        else if(position==1)
+            return new cwFragment().newInstance(tomo,"내일");
+        else
+            return new cwFragment().newInstance(nTomo,"모레");
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 3;
     }
 }

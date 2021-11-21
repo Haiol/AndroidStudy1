@@ -1,5 +1,6 @@
 package com.lovehp30.myapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
@@ -44,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
             SAXHandler handler = new SAXHandler();
             parser.parse(inputStream,handler);
             List<Weather> list = handler.getWeatherList();
-//            String s="";
+            String s = "";
+//            for (Weather w : list)
+//                s += w.getAll() + "\n";
+//            Log.e("Xml02", s);
             today = new ArrayList<>();
             tomo = new ArrayList<>();
             nTomo = new ArrayList<>();
@@ -57,12 +61,6 @@ public class MainActivity extends AppCompatActivity {
             }
             ViewAdapter adapter = new ViewAdapter(this,today,tomo,nTomo);
             binding.Pager.setAdapter(adapter);
-
-//            for(Weather w:today)
-//                s+=w.getAll()+"\n";
-//            Log.e("Xml02",s);
-
-
         } catch (Exception e) {
             Log.e("Xml02","예외 발생",e);
         }
