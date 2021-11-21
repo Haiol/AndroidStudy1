@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 
 import com.lovehp30.myapplication.databinding.ActivityMainBinding;
@@ -27,29 +28,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectNetwork().build());
         binding.btn.setOnClickListener(v->urlParser());
     }
 
 
     private void urlParser() {
-        AsyncTask asyncTask = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... voids) {
-                return null;
-            }
-        };
         try {
             URL url = new URL("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4136025000"); //기사청 날씨 URL
             InputStream inputStream = url.openStream();
-//            SAXParserFactory factory = SAXParserFactory.newInstance(); //공장 패턴
-//            SAXParser parser = factory.newSAXParser(); //SAXParser를 얻어냄.
-//            SAXHandler handler = new SAXHandler();
-//            parser.parse(inputStream,handler);
-//            List<Weather> list = handler.getWeatherList();
-//            String s="";
-//            for(Weather w:list)
-//                s+=w.getAll()+"\n";
-//            binding.txt.setText(s);
+            SAXParserFactory factory = SAXParserFactory.newInstance(); //공장 패턴
+            SAXParser parser = factory.newSAXParser(); //SAXParse 얻어냄.
+            SAXHandler handler = new SAXHandler();
+            parser.parse(inputStream,handler);
+            List<Weather> list = handler.getWeatherList();
+            String s="";
+            for(Weather w:list)
+                s+=w.getAll()+"\n";
+            Log.e("Xml02",s);
+
+            binding.txt.setText(s);
 
         } catch (Exception e) {
             Log.e("Xml02","예외 발생",e);

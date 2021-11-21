@@ -3,7 +3,7 @@ package com.lovehp30.myapplication.sax;
 public class Weather {
     private int hour;
     private int days;
-    private int temp;//온도
+    private float temp;//온도
     private String wfKor;
     private int pop;//강수확률
     private int reh;//습도
@@ -12,7 +12,7 @@ public class Weather {
         this.days = days;
     }
 
-    public void setTemp(int temp) {
+    public void setTemp(float temp) {
         this.temp = temp;
     }
 
@@ -44,7 +44,7 @@ public class Weather {
         return reh;
     }
 
-    public int getTemp() {
+    public float getTemp() {
         return temp;
     }
 

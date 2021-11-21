@@ -38,7 +38,7 @@ public class SAXHandler extends DefaultHandler {
         }else if (qName.equals("day")){
             weather.setDays(Integer.parseInt(str));
         }else if (qName.equals("temp")){
-            weather.setTemp(Integer.parseInt(str));
+            weather.setTemp(Float.parseFloat(str));
         }else if (qName.equals("wfKor")){
             weather.setWfKor(str);
         }else if (qName.equals("pop")){
