@@ -13,6 +13,7 @@ import com.lovehp30.myapplication.sax.Weather;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
@@ -23,13 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 //http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=4136025000
+    private ArrayList<Weather> today,tomo,nTomo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectNetwork().build());
-        binding.btn.setOnClickListener(v->urlParser());
+        urlParser();
     }
 
 
@@ -42,12 +44,24 @@ public class MainActivity extends AppCompatActivity {
             SAXHandler handler = new SAXHandler();
             parser.parse(inputStream,handler);
             List<Weather> list = handler.getWeatherList();
-            String s="";
-            for(Weather w:list)
-                s+=w.getAll()+"\n";
-            Log.e("Xml02",s);
+//            String s="";
+            today = new ArrayList<>();
+            tomo = new ArrayList<>();
+            nTomo = new ArrayList<>();
+            for(Weather w:list){
+                switch (w.getDays()){
+                   case 0: today.add(w);break;
+                    case 1: tomo.add(w);break;
+                    case 2: nTomo.add(w);break;
+                }
+            }
+            ViewAdapter adapter = new ViewAdapter(this,today,tomo,nTomo);
+            binding.Pager.setAdapter(adapter);
 
-            binding.txt.setText(s);
+//            for(Weather w:today)
+//                s+=w.getAll()+"\n";
+//            Log.e("Xml02",s);
+
 
         } catch (Exception e) {
             Log.e("Xml02","예외 발생",e);

@@ -1,6 +1,8 @@
 package com.lovehp30.myapplication.sax;
 
-public class Weather {
+import java.io.Serializable;
+
+public class Weather implements Serializable {
     private int hour;
     private int days;
     private float temp;//온도
